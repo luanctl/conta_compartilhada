@@ -35,6 +35,7 @@ public class UNIVATES_2019B {
        Scanner teclado = new Scanner(System.in);
        System.out.println("Digite o valor da tranferencia (numero inteiro)");
        int valorTransferencia = teclado.nextInt();
+      
     
       //int valorTransferencia = 200;
         
@@ -50,22 +51,27 @@ public class UNIVATES_2019B {
         pessoa2.setValorConta(500);
         System.out.println(pessoa2);
        
-        
+     
         
       transferencia(pessoa1.getNome(), pessoa2.getNome(), pessoa1.getValorConta(), valorTransferencia);
 
     }
           
-        public static void transferencia(String nomeP, String nomeS, double tra1, double tra2) {    
+        public static void transferencia(String nomeP, String nomeS, double tra1, double tra2) {
+           if(tra2 > 500 || tra2 < -500){
+                System.out.println("Valor não permitido");
+       }else {
         double result = tra1 + tra2;
         double result1 = tra1 - tra2;
+
+     
+           
         System.out.println("Valores Atualizados da Tranferencia: R$ " + tra2 + "\n"  + "\n" + "Nome = " + nomeP + "\n" + "Valor = "+ result + "\n" + 
                                                                "--------------------" + "\n" +
                                                              "Nome = " + nomeS + "\n" + "Valor = "+ result1);
-    
+            }
          
          }
-        
-       
-        
+
 }
+        
